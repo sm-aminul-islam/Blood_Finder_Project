@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="182" height="146" viewBox="0 0 182 146">
+    <defs>
+        <linearGradient id="a" x1="27.861%" x2="72.139%" y1="86.2%" y2="27.583%">
+            <stop offset="0%" stop-color="#D1001C"/>
+            <stop offset="100%" stop-color="#FF9090"/>
+        </linearGradient>
+        <linearGradient id="b" x1="50%" x2="50%" y1="0%" y2="101.329%">
+            <stop offset="0%" stop-color="#F46D74"/>
+            <stop offset="100%" stop-color="#D2011D"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <text fill="#D1001C" font-family="SofiaPro-Bold, Sofia Pro" font-size="26" font-weight="bold" transform="translate(-2 2)">
+            <tspan x="0" y="143">BLOOD FINDER</tspan>
+        </text>
+        <g fill-rule="nonzero">
+            <path fill="url(#a)" stroke="url(#b)" stroke-width="1.944" d="M38.436.446c.403.402 1.011 1.024 1.783 1.837 1.186 1.25 2.48 2.66 3.853 4.21 3.816 4.31 7.59 8.972 11.087 13.848 9.898 13.801 15.813 26.747 15.813 37.784 0 19.799-16.106 35.847-35.972 35.847S-.972 77.924-.972 58.125c0-11.037 5.915-23.983 15.813-37.784 3.497-4.876 7.271-9.538 11.087-13.848 1.372-1.55 2.667-2.96 3.853-4.21A96.372 96.372 0 0 1 31.564.446a4.868 4.868 0 0 1 6.872 0zm0 0z" transform="translate(55 2)"/>
+            <path fill="#FFF" stroke="#FFF" stroke-width="1.4" d="M117.792 86.222l-11.863-12.549a20.614 20.614 0 0 0 4.721-13.159c0-11.286-9.028-20.469-20.125-20.469S70.4 49.228 70.4 60.515c0 11.286 9.028 20.468 20.125 20.468a19.68 19.68 0 0 0 11.53-3.704l11.953 12.645c.5.527 1.172.818 1.892.818.682 0 1.328-.264 1.82-.744a2.705 2.705 0 0 0 .072-3.776zM90.525 45.385c8.202 0 14.875 6.787 14.875 15.13 0 8.342-6.673 15.129-14.875 15.129S75.65 68.857 75.65 60.514c0-8.342 6.673-15.129 14.875-15.129z"/>
+        </g>
+    </g>
+</svg>
