@@ -1,3 +1,4 @@
+import 'package:blood_finder/bloodGroupScreen/blood_group_screen.dart';
 import 'package:blood_finder/splashScreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -31,9 +32,11 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        fontFamily: 'SofiaPro-bold',
       ),
       debugShowCheckedModeBanner: false,
-      home: BFSScreen(),
+      home: //BloodGroupIdentify()
+          BFSScreen(),
     );
   }
 }
