@@ -1,4 +1,3 @@
-import 'package:blood_finder/bloodGroupScreen/blood_group_screen.dart';
 import 'package:blood_finder/splashScreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
