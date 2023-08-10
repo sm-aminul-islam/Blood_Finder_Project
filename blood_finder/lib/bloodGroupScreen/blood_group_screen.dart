@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -26,6 +24,10 @@ class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
         {'B_group': 'A+', "Name": "Fatema Naznin", "Prof": "Engineering"},
         {'B_group': 'O+', "Name": "Md. Sharif JR", "Prof": "Engineering"},
         {'B_group': 'A+', "Name": "Md.Rakibul Hasan", "Prof": "Engineering"},
+        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
+        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
+        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
+        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
       ],
     },
     {
@@ -211,9 +213,9 @@ class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
               top: 85,
               left: 15,
               child: Container(
-                padding: const EdgeInsets.only(left: 5),
+                padding: const EdgeInsets.only(right: 20, left: 15),
                 height: 60,
-                width: 390,
+                width: 400,
                 decoration: BoxDecoration(
                     color: const Color(0xFFffffff),
                     boxShadow: [
@@ -238,16 +240,17 @@ class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
                         child: Container(
                           height: 40,
                           width: 40,
-                          padding: const EdgeInsets.all(10),
-                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(2),
+                          margin: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: (selected == index)
-                                  ? const Color(0xFFd1001c)
-                                  : const Color(0xFFf5f5f5),
-                              border: Border.all(
-                                width: 0.5,
-                              ),
-                              shape: BoxShape.circle),
+                            color: (selected == index)
+                                ? const Color(0xFFd1001c)
+                                : const Color(0xFFf5f5f5),
+                            border: Border.all(
+                              width: 0.5,
+                            ),
+                            shape: BoxShape.circle,
+                          ),
                           child: Center(
                             child: Text(
                               _allgroup[index].keys.first,
