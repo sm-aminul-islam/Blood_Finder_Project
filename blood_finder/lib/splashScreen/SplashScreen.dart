@@ -15,7 +15,7 @@ class _BFSScreenState extends State<BFSScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (_) => const BloodGroupIdentify()));
     });
