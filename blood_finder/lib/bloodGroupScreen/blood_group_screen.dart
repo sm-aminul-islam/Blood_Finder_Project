@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class BloodGroupIdentify extends StatefulWidget {
   const BloodGroupIdentify({super.key});
@@ -185,13 +186,19 @@ class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        AppLocalizations.of(context)!.title,
-                        style: const TextStyle(
-                            fontFamily: 'SofiaPro-bold',
-                            color: Color(0xFFffffff),
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
+                      //Changing Language
+                      GestureDetector(
+                        onTap: () {
+                          saveLanguagePreference();
+                        },
+                        child: Text(
+                          AppLocalizations.of(context)!.title,
+                          style: const TextStyle(
+                              fontFamily: 'SofiaPro-bold',
+                              color: Color(0xFFffffff),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                       const SizedBox(
                         width: 100,
@@ -329,5 +336,22 @@ class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
         ),
       ),
     );
+  }
+
+  Future<void> saveLanguagePreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final int? currentLang = await prefs.getInt('language');
+    print("before");
+    print(currentLang);
+    await prefs.setInt('language', (currentLang == 1) ? 2 : 1);
+    print("after");
+    print(prefs.getInt('language'));
+
+    // AppLocalizations.(Locale('en', 'US'));
+
+    //WidgetsBinding.instance.reassembleApplication();
+    // await prefs.setInt('language', 2);
+
+    // (language == 1) ? Locale("en") : Locale("bn");
   }
 }
