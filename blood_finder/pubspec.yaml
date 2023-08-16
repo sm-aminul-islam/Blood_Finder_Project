@@ -93,6 +93,9 @@ flutter:
     - family: SofiaPro-Medium
       fonts:
         - asset: assets/fonts/Sofia Pro Medium.ttf
+    - family: SofiaPro-Regular
+      fonts:
+        - asset: assets/fonts/Sofia Pro Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
