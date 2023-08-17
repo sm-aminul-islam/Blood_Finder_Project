@@ -1,3 +1,4 @@
+import 'package:blood_finder/bloodGroupScreen/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -229,6 +230,12 @@ class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
                         bottom: BorderSide(color: Color(0xFFe6e6e6)),
                       )),
                       child: ListTile(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsScreen()));
+                        },
                         leading: Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
@@ -349,7 +356,7 @@ class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
 
     // AppLocalizations.(Locale('en', 'US'));
 
-    //WidgetsBinding.instance.reassembleApplication();
+    WidgetsBinding.instance.reassembleApplication();
     // await prefs.setInt('language', 2);
 
     // (language == 1) ? Locale("en") : Locale("bn");

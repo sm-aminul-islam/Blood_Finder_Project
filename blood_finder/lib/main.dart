@@ -1,4 +1,3 @@
-import 'package:blood_finder/bloodGroupScreen/details_screen.dart';
 import 'package:blood_finder/splashScreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -18,19 +17,16 @@ class MyApp extends StatelessWidget {
     getLanguagePreference();
     return MaterialApp(
       title: 'Blood Finder',
-      // localizationsDelegates: AppLocalizations.localizationsDelegates,
-      // supportedLocales: AppLocalizations.supportedLocales,
-      // locale: lang == 1 ? Locale("en") : Locale("bn"),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: lang == 1 ? Locale("en") : Locale("bn"),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         fontFamily: 'SofiaPro-bold',
       ),
       debugShowCheckedModeBanner: false,
-      home: const DetailsScreen(),
-
-      //BloodGroupIdentify()
-      //const BFSScreen(),
+      home: BFSScreen(),
     );
   }
 
@@ -38,9 +34,5 @@ class MyApp extends StatelessWidget {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     // print("value: ${prefs.getInt('language') ?? 1}");
     lang = await prefs.getInt('language') ?? 1;
-
-    WidgetsBinding.instance.reassembleApplication();
-
-    // return prefs.getInt('language') ?? 1;
   }
 }

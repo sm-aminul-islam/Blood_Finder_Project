@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:blood_finder/bloodGroupScreen/blood_group_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,8 +17,8 @@ class _BFSScreenState extends State<BFSScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (_) => const BloodGroupIdentify()));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const BloodGroupIdentify()));
     });
   }
 
