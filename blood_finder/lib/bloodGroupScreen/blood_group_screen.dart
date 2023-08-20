@@ -1,12 +1,18 @@
+import 'dart:convert';
+
 import 'package:blood_finder/bloodGroupScreen/details_screen.dart';
+import 'package:blood_finder/bloodModel/bloodgroupModel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class BloodGroupIdentify extends StatefulWidget {
-  const BloodGroupIdentify({super.key});
+  BloodGroupIdentify({
+    super.key,
+  });
 
   @override
   State<BloodGroupIdentify> createState() => _BloodGroupIdentifyState();
@@ -15,159 +21,178 @@ class BloodGroupIdentify extends StatefulWidget {
 class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
   final List<Map<String, List<Map<String, dynamic>>>> _allgroup = [
     {
-      'All': [
+      "All": [
         {
-          'B_group': 'B+',
+          "B_group": "B+",
           "Name": "Md.Iftekhar Alam Ishaque",
           "Prof": "Engineering"
         },
         {
-          'B_group': 'B+',
+          "B_group": "B+",
           "Name": "S.M.Aminul Islam",
           "Prof": "Intern,Engineering"
         },
-        {'B_group': 'B-', "Name": "Sabbir Arafat", "Prof": "Engineering"},
-        {'B_group': 'B-', "Name": "Shanjana Faria ", "Prof": "Engineering"},
+        {"B_group": "B-", "Name": "Sabbir Arafat", "Prof": "Engineering"},
+        {"B_group": "B-", "Name": "Shanjana Faria ", "Prof": "Engineering"},
         {
-          'B_group': 'O+',
+          "B_group": "O+",
           "Name": "Mohammad Masudur Rahman",
           "Prof": "Engineering"
         },
         {
-          'B_group': 'A+',
+          "B_group": "A+",
           "Name": "Mohammad Mahfuz Rahman",
           "Prof": "Engineering"
         },
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Mofajjal Ahmed", "Prof": "Network & System"},
-        {'B_group': 'A+', "Name": "G.M.Rifat Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Md.Nurul Hasan", "Prof": "Admin"},
-        {'B_group': 'A+', "Name": "Fatema Naznin", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Md. Sharif JR", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Md.Rakibul Hasan", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A-', "Name": "Mohammad Ali", "Prof": "Engineering"},
-        {'B_group': 'A-', "Name": "Dilshad Azad", "Prof": "Engineering"},
-        {'B_group': 'A-', "Name": "Moon Ahmed", "Prof": "Network & System"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Mofajjal Ahmed", "Prof": "Network & System"},
+        {"B_group": "A+", "Name": "G.M.Rifat Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Md.Nurul Hasan", "Prof": "Admin"},
+        {"B_group": "A+", "Name": "Fatema Naznin", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Md. Sharif JR", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Md.Rakibul Hasan", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A-", "Name": "Mohammad Ali", "Prof": "Engineering"},
+        {"B_group": "A-", "Name": "Dilshad Azad", "Prof": "Engineering"},
+        {"B_group": "A-", "Name": "Moon Ahmed", "Prof": "Network & System"},
         {
-          'B_group': 'O+',
+          "B_group": "O+",
           "Name": "Arafat Hossain",
           "Prof": "Digital Communication"
         },
-        {'B_group': 'O+', "Name": "Mostaque Ahmed", "Prof": "Network & System"},
-        {'B_group': 'O+', "Name": "G.M.Nayem Hossain", "Prof": "Engineering"},
-        {'B_group': 'O+', "Name": "Md.Nuru Mia", "Prof": "Admin"},
+        {"B_group": "O+", "Name": "Mostaque Ahmed", "Prof": "Network & System"},
+        {"B_group": "O+", "Name": "G.M.Nayem Hossain", "Prof": "Engineering"},
+        {"B_group": "O+", "Name": "Md.Nuru Mia", "Prof": "Admin"},
         {
-          'B_group': 'O+',
+          "B_group": "O+",
           "Name": "Fatema Noor Nazmoon",
           "Prof": "Human Resources"
         },
-        {'B_group': 'O+', "Name": "Md. Sharif Uddin", "Prof": "Admin"},
-        {'B_group': 'O-', "Name": "Sabrina Kaisar", "Prof": "Engineering"},
-        {'B_group': 'O-', "Name": "Mehedi Hasan", "Prof": "Engineering"},
-        {'B_group': 'AB+', "Name": "Saiful Islam", "Prof": "Engineering"},
-        {'B_group': 'AB+', "Name": "Najim Hossain ", "Prof": "Engineering"},
-        {'B_group': 'AB-', "Name": "Tahmid Arnob", "Prof": "Engineering"},
-        {'B_group': 'AB-', "Name": "Pithu Roy ", "Prof": "Engineering"},
+        {"B_group": "O+", "Name": "Md. Sharif Uddin", "Prof": "Admin"},
+        {"B_group": "O-", "Name": "Sabrina Kaisar", "Prof": "Engineering"},
+        {"B_group": "O-", "Name": "Mehedi Hasan", "Prof": "Engineering"},
+        {"B_group": "AB+", "Name": "Saiful Islam", "Prof": "Engineering"},
+        {"B_group": "AB+", "Name": "Najim Hossain ", "Prof": "Engineering"},
+        {"B_group": "AB-", "Name": "Tahmid Arnob", "Prof": "Engineering"},
+        {"B_group": "AB-", "Name": "Pithu Roy ", "Prof": "Engineering"},
       ],
     },
     {
-      'A+': [
+      "A+": [
         {
-          'B_group': 'A+',
+          "B_group": "A+",
           "Name": "Mohammad Mahfuz Rahman",
           "Prof": "Engineering"
         },
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Mofajjal Ahmed", "Prof": "Network & System"},
-        {'B_group': 'A+', "Name": "G.M.Rifat Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Md.Nurul Hasan", "Prof": "Admin"},
-        {'B_group': 'A+', "Name": "Fatema Naznin", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Md. Sharif JR", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Md.Rakibul Hasan", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
-        {'B_group': 'A+', "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Mofajjal Ahmed", "Prof": "Network & System"},
+        {"B_group": "A+", "Name": "G.M.Rifat Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Md.Nurul Hasan", "Prof": "Admin"},
+        {"B_group": "A+", "Name": "Fatema Naznin", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Md. Sharif JR", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Md.Rakibul Hasan", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
+        {"B_group": "A+", "Name": "Alif Hossain", "Prof": "Engineering"},
       ],
     },
     {
-      'A-': [
-        {'B_group': 'A-', "Name": "Mohammad Ali", "Prof": "Engineering"},
-        {'B_group': 'A-', "Name": "Dilshad Azad", "Prof": "Engineering"},
-        {'B_group': 'A-', "Name": "Moon Ahmed", "Prof": "Network & System"},
+      "A-": [
+        {"B_group": "A-", "Name": "Mohammad Ali", "Prof": "Engineering"},
+        {"B_group": "A-", "Name": "Dilshad Azad", "Prof": "Engineering"},
+        {"B_group": "A-", "Name": "Moon Ahmed", "Prof": "Network & System"},
       ],
     },
     {
-      'B+': [
+      "B+": [
         {
-          'B_group': 'B+',
+          "B_group": "B+",
           "Name": "Md.Iftekhar Alam Ishaque",
           "Prof": "Engineering"
         },
         {
-          'B_group': 'B+',
+          "B_group": "B+",
           "Name": "S.M.Aminul Islam",
           "Prof": "Intern,Engineering"
         },
       ],
     },
     {
-      'B-': [
-        {'B_group': 'B-', "Name": "Sabbir Arafat", "Prof": "Engineering"},
-        {'B_group': 'B-', "Name": "Shanjana Faria ", "Prof": "Engineering"},
+      "B-": [
+        {"B_group": "B-", "Name": "Sabbir Arafat", "Prof": "Engineering"},
+        {"B_group": "B-", "Name": "Shanjana Faria ", "Prof": "Engineering"},
       ],
     },
     {
-      'O+': [
+      "O+": [
         {
-          'B_group': 'O+',
+          "B_group": "O+",
           "Name": "Mohammad Masudur Rahman",
           "Prof": "Engineering"
         },
         {
-          'B_group': 'O+',
+          "B_group": "O+",
           "Name": "Arafat Hossain",
           "Prof": "Digital Communication"
         },
-        {'B_group': 'O+', "Name": "Mostaque Ahmed", "Prof": "Network & System"},
-        {'B_group': 'O+', "Name": "G.M.Nayem Hossain", "Prof": "Engineering"},
-        {'B_group': 'O+', "Name": "Md.Nuru Mia", "Prof": "Admin"},
+        {"B_group": "O+", "Name": "Mostaque Ahmed", "Prof": "Network & System"},
+        {"B_group": "O+", "Name": "G.M.Nayem Hossain", "Prof": "Engineering"},
+        {"B_group": "O+", "Name": "Md.Nuru Mia", "Prof": "Admin"},
         {
-          'B_group': 'O+',
+          "B_group": "O+",
           "Name": "Fatema Noor Nazmoon",
           "Prof": "Human Resources"
         },
-        {'B_group': 'O+', "Name": "Md. Sharif Uddin", "Prof": "Admin"},
+        {"B_group": "O+", "Name": "Md. Sharif Uddin", "Prof": "Admin"},
       ],
     },
     {
-      'O-': [
-        {'B_group': 'O-', "Name": "Sabrina Kaisar", "Prof": "Engineering"},
-        {'B_group': 'O-', "Name": "Mehedi Hasan", "Prof": "Engineering"},
+      "O-": [
+        {"B_group": "O-", "Name": "Sabrina Kaisar", "Prof": "Engineering"},
+        {"B_group": "O-", "Name": "Mehedi Hasan", "Prof": "Engineering"},
       ],
     },
     {
-      'AB+': [
-        {'B_group': 'AB+', "Name": "Saiful Islam", "Prof": "Engineering"},
-        {'B_group': 'AB+', "Name": "Najim Hossain ", "Prof": "Engineering"},
+      "AB+": [
+        {"B_group": "AB+", "Name": "Saiful Islam", "Prof": "Engineering"},
+        {"B_group": "AB+", "Name": "Najim Hossain ", "Prof": "Engineering"},
       ],
     },
     {
-      'AB-': [
-        {'B_group': 'AB-', "Name": "Tahmid Arnob", "Prof": "Engineering"},
-        {'B_group': 'AB-', "Name": "Pithu Roy ", "Prof": "Engineering"},
+      "AB-": [
+        {"B_group": "AB-", "Name": "Tahmid Arnob", "Prof": "Engineering"},
+        {"B_group": "AB-", "Name": "Pithu Roy ", "Prof": "Engineering"},
       ],
     },
   ];
+  BloodGroupModel data = BloodGroupModel();
+// Load Json
+  Future<void> loadJson() async {
+    final String jsonString =
+        await rootBundle.loadString("assets/Json/blood.json");
+
+    data = bloodGroupModelFromMap(jsonString);
+
+    // jsonDecode(jsonString);
+
+    // setState(() {
+    //   data;
+    // });
+  }
+
+  @override
+  void initState() {
+    loadJson();
+  }
 
   int selected = 0;
 
   directcall() async {
-    await FlutterPhoneDirectCaller.callNumber('01750113702');
+    await FlutterPhoneDirectCaller.callNumber("01750113702");
   }
 
   @override
@@ -243,7 +268,7 @@ class _BloodGroupIdentifyState extends State<BloodGroupIdentify> {
                                   width: 0.5, color: const Color(0xFFe6e6e6)),
                               shape: BoxShape.circle),
                           child: Text(
-                            _allgroup[selected].values.first[index]["B_group"],
+                            data.all?[index].bGroup ?? "",
                             style: const TextStyle(
                               fontFamily: "SofiaPro-bold",
                               fontSize: 14,

@@ -18,7 +18,7 @@ class _BFSScreenState extends State<BFSScreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const BloodGroupIdentify()));
+          MaterialPageRoute(builder: (context) => BloodGroupIdentify()));
     });
   }
 
