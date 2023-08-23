@@ -1,8 +1,14 @@
+import 'package:blood_finder/bloodModel/bloodgroupModel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+  DetailsScreen({super.key, required this.userdetails});
+  final Person userdetails;
+  void directPhoneCall() async {
+    await FlutterPhoneDirectCaller.callNumber('01911967811');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +67,11 @@ class DetailsScreen extends StatelessWidget {
                         height: 120,
                         width: 120,
                       ),
-                      const Positioned(
+                      Positioned(
                         top: 30,
                         child: Text(
-                          "A+",
-                          style: TextStyle(
+                          userdetails.bgroup ?? "",
+                          style: const TextStyle(
                             fontFamily: 'SofiaPro-SemiBold',
                             fontSize: 22,
                             color: Color(0xFFd1001c),
@@ -74,9 +80,9 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Text(
-                    "Mohammad Masudur Rahman",
-                    style: TextStyle(
+                  Text(
+                    userdetails.name ?? "",
+                    style: const TextStyle(
                       fontFamily: 'SofiaPro-Medium',
                       fontSize: 17,
                       color: Color(0xFF000000),
@@ -124,10 +130,15 @@ class DetailsScreen extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            SvgPicture.asset(
-                              "assets/images/phone-Icon.svg",
-                              height: 15,
-                              width: 15,
+                            GestureDetector(
+                              onTap: () {
+                                directPhoneCall();
+                              },
+                              child: SvgPicture.asset(
+                                "assets/images/phone-Icon.svg",
+                                height: 15,
+                                width: 15,
+                              ),
                             ),
                             Text(
                               'CALL',
@@ -265,7 +276,7 @@ class DetailsScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Finance & Account',
+                        userdetails.prof ?? "",
                         style: TextStyle(
                             fontFamily: 'SofiaPro-Medium',
                             fontSize: 14,

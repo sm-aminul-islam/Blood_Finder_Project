@@ -1,340 +1,340 @@
 {
-    "All":[
-       {
-          "B_group":"B+",
-          "Name":"Md.Iftekhar Alam Ishaque",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"B+",
-          "Name":"S.M.Aminul Islam",
-          "Prof":"Intern,Engineering"
-       },
-       {
-          "B_group":"B-",
-          "Name":"Sabbir Arafat",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"B-",
-          "Name":"Shanjana Faria ",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Mohammad Masudur Rahman",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Mohammad Mahfuz Rahman",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Mofajjal Ahmed",
-          "Prof":"Network & System"
-       },
-       {
-          "B_group":"A+",
-          "Name":"G.M.Rifat Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Md.Nurul Hasan",
-          "Prof":"Admin"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Fatema Naznin",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Md. Sharif JR",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Md.Rakibul Hasan",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A-",
-          "Name":"Mohammad Ali",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A-",
-          "Name":"Dilshad Azad",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A-",
-          "Name":"Moon Ahmed",
-          "Prof":"Network & System"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Arafat Hossain",
-          "Prof":"Digital Communication"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Mostaque Ahmed",
-          "Prof":"Network & System"
-       },
-       {
-          "B_group":"O+",
-          "Name":"G.M.Nayem Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Md.Nuru Mia",
-          "Prof":"Admin"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Fatema Noor Nazmoon",
-          "Prof":"Human Resources"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Md. Sharif Uddin",
-          "Prof":"Admin"
-       },
-       {
-          "B_group":"O-",
-          "Name":"Sabrina Kaisar",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"O-",
-          "Name":"Mehedi Hasan",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"AB+",
-          "Name":"Saiful Islam",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"AB+",
-          "Name":"Najim Hossain ",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"AB-",
-          "Name":"Tahmid Arnob",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"AB-",
-          "Name":"Pithu Roy ",
-          "Prof":"Engineering"
-       }
-    ],
-    "A+":[
-       {
-          "B_group":"A+",
-          "Name":"Mohammad Mahfuz Rahman",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Mofajjal Ahmed",
-          "Prof":"Network & System"
-       },
-       {
-          "B_group":"A+",
-          "Name":"G.M.Rifat Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Md.Nurul Hasan",
-          "Prof":"Admin"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Fatema Naznin",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Md. Sharif JR",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Md.Rakibul Hasan",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A+",
-          "Name":"Alif Hossain",
-          "Prof":"Engineering"
-       }
-    ],
-    "A-":[
-       {
-          "B_group":"A-",
-          "Name":"Mohammad Ali",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A-",
-          "Name":"Dilshad Azad",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"A-",
-          "Name":"Moon Ahmed",
-          "Prof":"Network & System"
-       }
-    ],
-    "B+":[
-       {
-          "B_group":"B+",
-          "Name":"Md.Iftekhar Alam Ishaque",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"B+",
-          "Name":"S.M.Aminul Islam",
-          "Prof":"Intern,Engineering"
-       }
-    ],
-    "B-":[
-       {
-          "B_group":"B-",
-          "Name":"Sabbir Arafat",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"B-",
-          "Name":"Shanjana Faria ",
-          "Prof":"Engineering"
-       }
-    ],
-    "O+":[
-       {
-          "B_group":"O+",
-          "Name":"Mohammad Masudur Rahman",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Arafat Hossain",
-          "Prof":"Digital Communication"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Mostaque Ahmed",
-          "Prof":"Network & System"
-       },
-       {
-          "B_group":"O+",
-          "Name":"G.M.Nayem Hossain",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Md.Nuru Mia",
-          "Prof":"Admin"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Fatema Noor Nazmoon",
-          "Prof":"Human Resources"
-       },
-       {
-          "B_group":"O+",
-          "Name":"Md. Sharif Uddin",
-          "Prof":"Admin"
-       }
-    ],
-    "O-":[
-       {
-          "B_group":"O-",
-          "Name":"Sabrina Kaisar",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"O-",
-          "Name":"Mehedi Hasan",
-          "Prof":"Engineering"
-       }
-    ],
-    "AB+":[
-       {
-          "B_group":"AB+",
-          "Name":"Saiful Islam",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"AB+",
-          "Name":"Najim Hossain ",
-          "Prof":"Engineering"
-       }
-    ],
-    "AB-":[
-       {
-          "B_group":"AB-",
-          "Name":"Tahmid Arnob",
-          "Prof":"Engineering"
-       },
-       {
-          "B_group":"AB-",
-          "Name":"Pithu Roy ",
-          "Prof":"Engineering"
-       }
-    ]
- }
+  "All":[
+     {
+        "B_group":"B+",
+        "Name":"Md.Iftekhar Alam Ishaque",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"B+",
+        "Name":"S.M.Aminul Islam",
+        "Prof":"Intern,Engineering"
+     },
+     {
+        "B_group":"B-",
+        "Name":"Sabbir Arafat",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"B-",
+        "Name":"Shanjana Faria ",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Mohammad Masudur Rahman",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Mohammad Mahfuz Rahman",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Mofajjal Ahmed",
+        "Prof":"Network & System"
+     },
+     {
+        "B_group":"A+",
+        "Name":"G.M.Rifat Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Md.Nurul Hasan",
+        "Prof":"Admin"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Fatema Naznin",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Md. Sharif JR",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Md.Rakibul Hasan",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A-",
+        "Name":"Mohammad Ali",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A-",
+        "Name":"Dilshad Azad",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A-",
+        "Name":"Moon Ahmed",
+        "Prof":"Network & System"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Arafat Hossain",
+        "Prof":"Digital Communication"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Mostaque Ahmed",
+        "Prof":"Network & System"
+     },
+     {
+        "B_group":"O+",
+        "Name":"G.M.Nayem Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Md.Nuru Mia",
+        "Prof":"Admin"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Fatema Noor Nazmoon",
+        "Prof":"Human Resources"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Md. Sharif Uddin",
+        "Prof":"Admin"
+     },
+     {
+        "B_group":"O-",
+        "Name":"Sabrina Kaisar",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"O-",
+        "Name":"Mehedi Hasan",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"AB+",
+        "Name":"Saiful Islam",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"AB+",
+        "Name":"Najim Hossain ",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"AB-",
+        "Name":"Tahmid Arnob",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"AB-",
+        "Name":"Pithu Roy ",
+        "Prof":"Engineering"
+     }
+  ],
+  "A+":[
+     {
+        "B_group":"A+",
+        "Name":"Mohammad Mahfuz Rahman",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Mofajjal Ahmed",
+        "Prof":"Network & System"
+     },
+     {
+        "B_group":"A+",
+        "Name":"G.M.Rifat Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Md.Nurul Hasan",
+        "Prof":"Admin"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Fatema Naznin",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Md. Sharif JR",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Md.Rakibul Hasan",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A+",
+        "Name":"Alif Hossain",
+        "Prof":"Engineering"
+     }
+  ],
+  "A-":[
+     {
+        "B_group":"A-",
+        "Name":"Mohammad Ali",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A-",
+        "Name":"Dilshad Azad",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"A-",
+        "Name":"Moon Ahmed",
+        "Prof":"Network & System"
+     }
+  ],
+  "B+":[
+     {
+        "B_group":"B+",
+        "Name":"Md.Iftekhar Alam Ishaque",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"B+",
+        "Name":"S.M.Aminul Islam",
+        "Prof":"Intern,Engineering"
+     }
+  ],
+  "B-":[
+     {
+        "B_group":"B-",
+        "Name":"Sabbir Arafat",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"B-",
+        "Name":"Shanjana Faria ",
+        "Prof":"Engineering"
+     }
+  ],
+  "O+":[
+     {
+        "B_group":"O+",
+        "Name":"Mohammad Masudur Rahman",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Arafat Hossain",
+        "Prof":"Digital Communication"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Mostaque Ahmed",
+        "Prof":"Network & System"
+     },
+     {
+        "B_group":"O+",
+        "Name":"G.M.Nayem Hossain",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Md.Nuru Mia",
+        "Prof":"Admin"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Fatema Noor Nazmoon",
+        "Prof":"Human Resources"
+     },
+     {
+        "B_group":"O+",
+        "Name":"Md. Sharif Uddin",
+        "Prof":"Admin"
+     }
+  ],
+  "O-":[
+     {
+        "B_group":"O-",
+        "Name":"Sabrina Kaisar",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"O-",
+        "Name":"Mehedi Hasan",
+        "Prof":"Engineering"
+     }
+  ],
+  "AB+":[
+     {
+        "B_group":"AB+",
+        "Name":"Saiful Islam",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"AB+",
+        "Name":"Najim Hossain ",
+        "Prof":"Engineering"
+     }
+  ],
+  "AB-":[
+     {
+        "B_group":"AB-",
+        "Name":"Tahmid Arnob",
+        "Prof":"Engineering"
+     },
+     {
+        "B_group":"AB-",
+        "Name":"Pithu Roy ",
+        "Prof":"Engineering"
+     }
+  ]
+}

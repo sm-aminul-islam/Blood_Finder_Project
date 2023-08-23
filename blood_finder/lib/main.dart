@@ -1,3 +1,4 @@
+import 'package:blood_finder/bloodGroupScreen/filterScreen.dart';
 import 'package:blood_finder/splashScreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SofiaPro-bold',
       ),
       debugShowCheckedModeBanner: false,
-      home: BFSScreen(),
+      home: FilterScreen(),
+      // BFSScreen(),
     );
   }
 

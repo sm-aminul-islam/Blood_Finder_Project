@@ -1,6 +1,10 @@
+// To parse this JSON data, do
+//
+//     final bloodGroupModel = bloodGroupModelFromMap(jsonString);
+
 import 'dart:convert';
 
-BloodGroupModel bloodGroupModelFromMap(String str) =>
+/*BloodGroupModel bloodGroupModelFromMap(String str) =>
     BloodGroupModel.fromMap(json.decode(str));
 
 String bloodGroupModelToMap(BloodGroupModel data) => json.encode(data.toMap());
@@ -102,4 +106,97 @@ class A {
         "Name": name,
         "Prof": prof,
       };
+}
+*/
+
+GroupModel bloodGroupModelFromMap(String str) =>
+    GroupModel.fromMap(jsonDecode(str));
+
+String bloodGroupModelToMap(GroupModel data) => json.encode(data.tojson());
+
+class Person {
+  String? bgroup;
+  String? name;
+  String? prof;
+  Person({this.bgroup, this.name, this.prof});
+
+  factory Person.fromMap(Map<String, dynamic> map) {
+    return Person(bgroup: map['B_group'], name: map['Name'], prof: map['Prof']);
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'B_group': bgroup,
+      'Name': name,
+      'Prof': prof,
+    };
+  }
+}
+
+class GroupModel {
+  List<Person>? all;
+  List<Person>? Apos;
+  List<Person>? Aneg;
+  List<Person>? Bpos;
+  List<Person>? Bneg;
+  List<Person>? Opos;
+  List<Person>? Oneg;
+  List<Person>? ABpos;
+  List<Person>? ABneg;
+
+  GroupModel(
+      {this.all,
+      this.Apos,
+      this.Aneg,
+      this.Bpos,
+      this.Bneg,
+      this.Opos,
+      this.Oneg,
+      this.ABpos,
+      this.ABneg});
+
+  factory GroupModel.fromMap(Map<String, dynamic> json) {
+    return GroupModel(
+        all: json['All'] == null
+            ? []
+            : List<Person>.from(json['All'].map((e) => Person.fromMap(e))),
+        Apos: json['A+'] == null
+            ? []
+            : List<Person>.from(json['A+'].map((e) => Person.fromMap(e))),
+        Aneg: json['A-'] == null
+            ? []
+            : List<Person>.from(json['A-'].map((e) => Person.fromMap(e))),
+        Bpos: json['B+'] == null
+            ? []
+            : List<Person>.from(json['B+'].map((e) => Person.fromMap(e))),
+        Bneg: json['B-'] == null
+            ? []
+            : List<Person>.from(json['B-'].map((e) => Person.fromMap(e))),
+        Opos: json['O+'] == null
+            ? []
+            : List<Person>.from(json['O+'].map((e) => Person.fromMap(e))),
+        Oneg: json['O-'] == null
+            ? []
+            : List<Person>.from(json['O-'].map((e) => Person.fromMap(e))),
+        ABpos: json['AB+'] == null
+            ? []
+            : List<Person>.from(json['AB+'].map((e) => Person.fromMap(e))),
+        ABneg: json['AB-'] == null
+            ? []
+            : List<Person>.from(json['AB-'].map((e) => Person.fromMap(e))));
+  }
+
+  Map<String, dynamic> tojson() {
+    return {
+      'All': all,
+      'A+': Apos,
+      'A-': Aneg,
+      'B+': Bpos,
+      'B-': Bneg,
+      'O+': Opos,
+      'O-': Oneg,
+      'AB+': ABpos,
+      'AB-': ABneg,
+    };
+  }
 }
