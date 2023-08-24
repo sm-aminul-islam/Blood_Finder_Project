@@ -36,9 +36,9 @@ class DetailsScreen extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      GestureDetector(
+                      InkWell(
                         onTap: () {
-                          Navigator.pop(context);
+                          Navigator.of(context).pop();
                         },
                         child: SvgPicture.asset(
                           "assets/images/combined_shape.svg",

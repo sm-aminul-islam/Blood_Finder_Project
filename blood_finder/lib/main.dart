@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SofiaPro-bold',
       ),
       debugShowCheckedModeBanner: false,
-      home: FilterScreen(),
-      // BFSScreen(),
+      home: //FilterScreen(),
+          BFSScreen(),
     );
   }
 
