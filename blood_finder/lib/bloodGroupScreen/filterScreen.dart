@@ -40,7 +40,10 @@ class _FilterScreenState extends State<FilterScreen> {
   ];
   final List<String> gender = ["Male", "Female"];
 
-  int seletedview = 0;
+  int bloodselect = 0;
+  int companyNameselect = 0;
+  int deptselect = 0;
+  int genderselect = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -100,14 +103,14 @@ class _FilterScreenState extends State<FilterScreen> {
                             return GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  seletedview = index;
+                                  bloodselect = index;
                                 });
                               },
                               child: Container(
                                 height: 80,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                    color: (seletedview == index)
+                                    color: (bloodselect == index)
                                         ? Color(0xFFd1001c)
                                         : Color(0xFFffffff),
                                     shape: BoxShape.circle,
@@ -119,7 +122,7 @@ class _FilterScreenState extends State<FilterScreen> {
                                     style: TextStyle(
                                         fontFamily: "SofiaPro-SemiBold",
                                         fontSize: 18,
-                                        color: (seletedview == index)
+                                        color: (bloodselect == index)
                                             ? Color(0xFFffffff)
                                             : Color(0xFF686d78)),
                                   ),
@@ -147,12 +150,12 @@ class _FilterScreenState extends State<FilterScreen> {
                     leading: GestureDetector(
                       onTap: () {
                         setState(() {
-                          seletedview = index;
+                          companyNameselect = index;
                         });
                       },
                       child: Container(
                         decoration: CustomDecoration.boxDecoration,
-                        child: (seletedview == index)
+                        child: (companyNameselect == index)
                             ? SvgPicture.asset(
                                 "assets/images/radioButtonCl.svg",
                                 height: 25,
@@ -204,7 +207,7 @@ class _FilterScreenState extends State<FilterScreen> {
                                       GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        seletedview = index;
+                                        deptselect = index;
                                       });
                                     },
                                     child: Container(
@@ -225,7 +228,7 @@ class _FilterScreenState extends State<FilterScreen> {
                                                         .strokeAlignCenter,
                                                     color: const Color(
                                                         0xFFadadad))),
-                                            child: (seletedview == index)
+                                            child: (deptselect == index)
                                                 ? CustomSVgwithColor.svgcl
                                                 : CustomSvgwithoutCl.svg),
                                         title: Text(
@@ -233,7 +236,7 @@ class _FilterScreenState extends State<FilterScreen> {
                                           style: TextStyle(
                                             fontFamily: "SofiaPro-Medium",
                                             fontSize: 12,
-                                            color: (seletedview == index)
+                                            color: (deptselect == index)
                                                 ? const Color(0xFF000000)
                                                 : const Color(0xff808283),
                                           ),
@@ -263,7 +266,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   itemBuilder: (context, index) => GestureDetector(
                         onTap: () {
                           setState(() {
-                            seletedview = index;
+                            genderselect = index;
                           });
                         },
                         child: ListTile(
@@ -273,7 +276,7 @@ class _FilterScreenState extends State<FilterScreen> {
                                   width: 0.5, color: Color(0xffe6e6e6))),
                           leading: Container(
                               decoration: CustomDecoration.boxDecoration,
-                              child: (seletedview == index)
+                              child: (genderselect == index)
                                   ? CustomSVgwithColor.svgcl
                                   : CustomSvgwithoutCl.svg),
                           title: Text(
@@ -315,7 +318,7 @@ class _FilterScreenState extends State<FilterScreen> {
                               color: Color(0xffededed)),
                           child: Center(
                               child: Text(
-                            bloodList[seletedview],
+                            bloodList[bloodselect],
                             style: CustomTextstyle.txt,
                           )),
                         ),
@@ -328,7 +331,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           ),
                           child: Center(
                             child: Text(
-                              companyName[seletedview],
+                              companyName[companyNameselect],
                               style: CustomTextstyle.txt,
                             ),
                           ),
@@ -340,7 +343,7 @@ class _FilterScreenState extends State<FilterScreen> {
                               borderRadius: BorderRadius.circular(13),
                               color: const Color(0xffededed)),
                           child: Center(
-                            child: Text(department[seletedview],
+                            child: Text(department[deptselect],
                                 style: CustomTextstyle.txt),
                           ),
                         )
