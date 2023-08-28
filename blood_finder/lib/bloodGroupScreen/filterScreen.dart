@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'dart:math';
+import 'package:blood_finder/const/constValue.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -136,95 +137,118 @@ class _FilterScreenState extends State<FilterScreen> {
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                 itemCount: companyName.length,
-                itemBuilder: (context, index) => ExpansionTile(
-                  tilePadding: EdgeInsets.all(15),
-                  shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                    width: 5,
-                    color: Color(0xFFe6e6e6),
-                  )),
-                  leading: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        seletedview = index;
-                      });
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                              strokeAlign: BorderSide.strokeAlignCenter,
-                              color: const Color(0xFFadadad))),
-                      child: (seletedview == index)
-                          ? SvgPicture.asset(
-                              "assets/images/radioButtonCl.svg",
-                              height: 25,
-                              width: 25,
-                            )
-                          : SvgPicture.asset(
-                              "assets/images/radioButton.svg",
-                              height: 25,
-                              width: 25,
-                            ),
+                itemBuilder: (context, index) => Container(
+                  decoration: const BoxDecoration(
+                      border: Border(
+                          bottom: BorderSide(
+                              width: 0.5, color: Color(0xffe6e6e6)))),
+                  child: ExpansionTile(
+                    tilePadding: const EdgeInsets.all(10),
+                    leading: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          seletedview = index;
+                        });
+                      },
+                      child: Container(
+                        decoration: CustomDecoration.boxDecoration,
+                        child: (seletedview == index)
+                            ? SvgPicture.asset(
+                                "assets/images/radioButtonCl.svg",
+                                height: 25,
+                                width: 25,
+                              )
+                            : SvgPicture.asset(
+                                "assets/images/radioButton.svg",
+                                height: 25,
+                                width: 25,
+                              ),
+                      ),
                     ),
-                  ),
-                  title: Text(
-                    companyName[index],
-                    style: const TextStyle(
-                      fontFamily: "SofiaPro-Medium",
-                      fontSize: 14,
-                      color: Color(0xFF000000),
+                    title: Text(
+                      companyName[index],
+                      style: const TextStyle(
+                        fontFamily: "SofiaPro-Medium",
+                        fontSize: 14,
+                        color: Color(0xFF000000),
+                      ),
                     ),
-                  ),
-                  children: [
-                    Container(
-                      height: 261,
-                      child: ListView.builder(
-                          itemCount: department.length,
-                          itemBuilder: (context, index) => ListTile(
-                                contentPadding: EdgeInsets.all(10),
-                                shape: const RoundedRectangleBorder(
-                                    side: BorderSide(
-                                  width: 0.5,
-                                  color: Color(0xFFe6e6e6),
-                                )),
-                                leading: GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      seletedview = index;
-                                    });
-                                  },
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border: Border.all(
-                                            strokeAlign:
-                                                BorderSide.strokeAlignCenter,
-                                            color: const Color(0xFFadadad))),
-                                    child: (seletedview == index)
-                                        ? SvgPicture.asset(
-                                            "assets/images/radioButtonCl.svg",
-                                            height: 25,
-                                            width: 25,
-                                          )
-                                        : SvgPicture.asset(
-                                            "assets/images/radioButton.svg",
-                                            height: 25,
-                                            width: 25,
+                    children: [
+                      Container(
+                        height: 261,
+                        color: Color(0xfff5f5f5),
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 60),
+                            child: Column(
+                              children: [
+                                const Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      "Select Department",
+                                      style: TextStyle(
+                                        fontFamily: "SofiaPro-Regular",
+                                        fontSize: 11,
+                                        color: Color(0xffadb1b2),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                ListView.builder(
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemCount: department.length,
+                                  itemBuilder: (context, index) =>
+                                      GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        seletedview = index;
+                                      });
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          bottom: BorderSide(
+                                              width: 0.5,
+                                              color: Color(0xffe4e4e4)),
+                                        ),
+                                      ),
+                                      child: ListTile(
+                                        contentPadding: EdgeInsets.all(5),
+                                        leading: Container(
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                    strokeAlign: BorderSide
+                                                        .strokeAlignCenter,
+                                                    color: const Color(
+                                                        0xFFadadad))),
+                                            child: (seletedview == index)
+                                                ? CustomSVgwithColor.svgcl
+                                                : CustomSvgwithoutCl.svg),
+                                        title: Text(
+                                          department[index],
+                                          style: TextStyle(
+                                            fontFamily: "SofiaPro-Medium",
+                                            fontSize: 12,
+                                            color: (seletedview == index)
+                                                ? const Color(0xFF000000)
+                                                : const Color(0xff808283),
                                           ),
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
-                                title: Text(
-                                  department[index],
-                                  style: const TextStyle(
-                                    fontFamily: "SofiaPro-Medium",
-                                    fontSize: 14,
-                                    color: Color(0xFF000000),
-                                  ),
-                                ),
-                              )),
-                    ),
-                  ],
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -236,44 +260,29 @@ class _FilterScreenState extends State<FilterScreen> {
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                   itemCount: gender.length,
-                  itemBuilder: (context, index) => ListTile(
-                        contentPadding: EdgeInsets.all(10),
-                        shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                          width: 0.5,
-                          color: Color(0xFFe6e6e6),
-                        )),
-                        leading: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              seletedview = index;
-                            });
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                    strokeAlign: BorderSide.strokeAlignCenter,
-                                    color: const Color(0xFFadadad))),
-                            child: (seletedview == index)
-                                ? SvgPicture.asset(
-                                    "assets/images/radioButtonCl.svg",
-                                    height: 23,
-                                    width: 23,
-                                  )
-                                : SvgPicture.asset(
-                                    "assets/images/radioButton.svg",
-                                    height: 25,
-                                    width: 25,
-                                  ),
-                          ),
-                        ),
-                        title: Text(
-                          gender[index],
-                          style: const TextStyle(
-                            fontFamily: "SofiaPro-Medium",
-                            fontSize: 14,
-                            color: Color(0xFF000000),
+                  itemBuilder: (context, index) => GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            seletedview = index;
+                          });
+                        },
+                        child: ListTile(
+                          contentPadding: EdgeInsets.all(10),
+                          shape: Border(
+                              bottom: BorderSide(
+                                  width: 0.5, color: Color(0xffe6e6e6))),
+                          leading: Container(
+                              decoration: CustomDecoration.boxDecoration,
+                              child: (seletedview == index)
+                                  ? CustomSVgwithColor.svgcl
+                                  : CustomSvgwithoutCl.svg),
+                          title: Text(
+                            gender[index],
+                            style: const TextStyle(
+                              fontFamily: "SofiaPro-Medium",
+                              fontSize: 14,
+                              color: Color(0xFF000000),
+                            ),
                           ),
                         ),
                       )),
@@ -282,30 +291,78 @@ class _FilterScreenState extends State<FilterScreen> {
           bottomNavigationBar: BottomAppBar(
             child: Container(
               height: 100,
-              decoration: BoxDecoration(color: Color(0xFFffffff), boxShadow: [
+              decoration:
+                  BoxDecoration(color: const Color(0xFFffffff), boxShadow: [
                 BoxShadow(
-                  color: Color(0xFF000000).withOpacity(0.1),
-                  offset: Offset(0, 0),
+                  color: const Color(0xFF000000).withOpacity(0.1),
+                  offset: const Offset(0, 0),
                   blurRadius: 12,
                   spreadRadius: 0,
                 ),
               ]),
               child: Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          height: 26,
+                          width: 49,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(13),
+                              color: Color(0xffededed)),
+                          child: Center(
+                              child: Text(
+                            bloodList[seletedview],
+                            style: CustomTextstyle.txt,
+                          )),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          height: 26,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(13),
+                            color: const Color(0xffededed),
+                          ),
+                          child: Center(
+                            child: Text(
+                              companyName[seletedview],
+                              style: CustomTextstyle.txt,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          height: 26,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(13),
+                              color: const Color(0xffededed)),
+                          child: Center(
+                            child: Text(department[seletedview],
+                                style: CustomTextstyle.txt),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                   Container(
                     height: 56,
-                    color: Color(0xFFd1001c),
-                    child: Center(
+                    width: MediaQuery.of(context).size.width,
+                    color: const Color(0xffd1001c),
+                    child: const Center(
                       child: Text(
                         "APPLY",
                         style: TextStyle(
-                            fontFamily: "SofiaPro-bold",
-                            fontSize: 14,
-                            letterSpacing: 1,
-                            color: Color(0xffffffff)),
+                          fontFamily: "SofiaPro-bold",
+                          fontSize: 14,
+                          letterSpacing: 1,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
