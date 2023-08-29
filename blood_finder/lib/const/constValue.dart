@@ -3,7 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomTextstyle {
   static const TextStyle txt = TextStyle(
-      fontFamily: "SofiaPro-Medium", fontSize: 11, color: Color(0xFF686d73));
+    fontFamily: "SofiaPro-Medium",
+    fontSize: 11,
+    color: Color(0xFF686d73),
+  );
 }
 
 class CustomDecoration {
