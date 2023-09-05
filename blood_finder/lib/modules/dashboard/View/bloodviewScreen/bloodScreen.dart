@@ -1,9 +1,9 @@
 import 'dart:developer';
-
-import 'package:blood_finder/bloodGroupScreen/blood_group_screen.dart';
-import 'package:blood_finder/bloodGroupScreen/changeNotifierBloodGroup.dart';
-import 'package:blood_finder/bloodGroupScreen/details_screen.dart';
-import 'package:blood_finder/bloodGroupScreen/filterScreen.dart';
+import 'dart:io';
+import 'package:blood_finder/modules/Dashboard/Controller/changeNotifierBloodGroup.dart';
+import 'package:blood_finder/modules/dashboard/View/deatilspageview/details_screen.dart';
+import 'package:blood_finder/modules/dashboard/View/filterScreen/filterScreen.dart';
+import 'package:blood_finder/modules/customwidget/customtext/customText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -34,16 +34,14 @@ class BloodScreen extends StatelessWidget {
                         builder: (context, ref, child) => GestureDetector(
                           onTap: () {
                             ref
-                                .read(notifyBloodmodel.notifier)
+                                .read(controller.notifier)
                                 .saveLanguagePreference();
                           },
-                          child: Text(
-                            AppLocalizations.of(context)!.title,
-                            style: const TextStyle(
-                                fontFamily: 'SofiaPro-bold',
-                                color: Color(0xFFffffff),
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
+                          child: CustomText(
+                            text: AppLocalizations.of(context)!.title,
+                            family: "SofiaPro-bold",
+                            size: 16,
+                            color: const Color(0xFFffffff),
                           ),
                         ),
                       ),
@@ -57,27 +55,27 @@ class BloodScreen extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => FilterScreen()));
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => FilterScreen(),
+                            ),
+                          );
                         },
-                        child: const Text(
-                          "FILTERS",
-                          style: TextStyle(
-                            fontFamily: 'SofiaPro-SemiBold',
-                            fontSize: 14,
-                            color: Color(0xFFffffff),
-                          ),
+                        child: const CustomText(
+                          text: "FILTERS",
+                          family: "SofiaPro-SemiBold",
+                          size: 14,
+                          color: Color(0xFFffffff),
+                          fontWeight: FontWeight.bold,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
                 const SizedBox(height: 21),
                 Expanded(
                   child: Consumer(builder: (context, ref, child) {
-                    final changeBloodGroupController =
-                        ref.watch(notifyBloodmodel);
-                    print(changeBloodGroupController.showdata);
+                    final changeBloodGroupController = ref.watch(controller);
 
                     return ListView.builder(
                       itemCount: changeBloodGroupController.showdata.length,
@@ -101,38 +99,40 @@ class BloodScreen extends StatelessWidget {
                           leading: Container(
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 0.5, color: const Color(0xFFe6e6e6)),
-                                shape: BoxShape.circle),
-                            child: Text(
-                              changeBloodGroupController
+                              border: Border.all(
+                                  width: 0.5, color: const Color(0xFFe6e6e6)),
+                              shape: BoxShape.circle,
+                            ),
+                            child: CustomText(
+                              text: changeBloodGroupController
                                       .showdata[index].bgroup ??
                                   " ",
-                              style: const TextStyle(
-                                fontFamily: "SofiaPro-bold",
-                                fontSize: 14,
-                                color: Color(0xFF000000),
-                              ),
+                              family: "SofiaPro-bold",
+                              size: 14,
+                              color: const Color(0xFF000000),
                             ),
                           ),
-                          title: Text(
-                            changeBloodGroupController.showdata[index].name ??
+                          title: CustomText(
+                            text: changeBloodGroupController
+                                    .showdata[index].name ??
                                 "",
-                            style: const TextStyle(
-                                fontFamily: 'SofiaPro-Medium',
-                                fontSize: 13,
-                                color: Color(0xFF000000),
-                                fontWeight: FontWeight.bold),
+                            family: "SofiaPro-Medium",
+                            size: 13,
+                            color: const Color(0xFF000000),
                           ),
-                          subtitle: Text(
-                            changeBloodGroupController.showdata[index].prof ??
-                                "",
-                            style: const TextStyle(
-                                color: Color(0xFF94989e), fontSize: 11),
+
+                          subtitle: CustomText(
+                            text: changeBloodGroupController
+                                    .showdata[index].prof ??
+                                " ",
+                            size: 11,
+                            color: const Color(0xFF94989e),
                           ),
+
+                          // //For call
                           trailing: InkWell(
                             onTap: () {
-                              ref.read(notifyBloodmodel.notifier).directcall();
+                              ref.read(controller.notifier).directcall();
                             },
                             child: CircleAvatar(
                               backgroundColor: const Color(0xFFf5f5f5),
@@ -168,8 +168,7 @@ class BloodScreen extends StatelessWidget {
                     ],
                     borderRadius: BorderRadius.circular(30)),
                 child: Consumer(builder: (context, ref, child) {
-                  final changeBloodlistControlller =
-                      ref.read(notifyBloodmodel.notifier);
+                  final changeBloodlistControlller = ref.watch(controller);
                   return ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: changeBloodlistControlller.bloodGroupList.length,
@@ -186,7 +185,7 @@ class BloodScreen extends StatelessWidget {
                           margin: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             color:
-                                (ref.watch(notifyBloodmodel).selected == index)
+                                (changeBloodlistControlller.selected == index)
                                     ? const Color(0xFFd1001c)
                                     : const Color(0xFFf5f5f5),
                             border: Border.all(
@@ -195,16 +194,14 @@ class BloodScreen extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Center(
-                            child: Text(
-                              changeBloodlistControlller.bloodGroupList[index],
-                              style: TextStyle(
-                                fontFamily: "SofiaPro-bold",
-                                fontSize: 14,
-                                color: (changeBloodlistControlller.selected ==
-                                        index)
-                                    ? const Color(0xFFf5f5f5)
-                                    : Color(0xFF000000),
-                              ),
+                            child: CustomText(
+                              text: changeBloodlistControlller
+                                  .bloodGroupList[index],
+                              size: 14,
+                              color:
+                                  (changeBloodlistControlller.selected == index)
+                                      ? const Color(0xFFf5f5f5)
+                                      : Color(0xFF000000),
                             ),
                           ),
                         ),
@@ -218,6 +215,5 @@ class BloodScreen extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

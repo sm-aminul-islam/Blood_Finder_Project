@@ -1,15 +1,17 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:blood_finder/bloodModel/bloodgroupModel.dart';
+import 'package:blood_finder/modules/Dashboard/Model/bloodgroupModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class BloodModel with ChangeNotifier {
-  BloodModel() {
+final controller = ChangeNotifierProvider((ref) => BloodController());
+
+class BloodController with ChangeNotifier {
+  BloodController() {
     loadJson();
   }
 
@@ -44,7 +46,6 @@ class BloodModel with ChangeNotifier {
 
     jsonDecode(jsonString);
     showdata = data.all ?? [];
-    print(showdata);
 
     notifyListeners();
   }
@@ -52,11 +53,7 @@ class BloodModel with ChangeNotifier {
   Future<void> saveLanguagePreference() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     final int? currentLang = await prefs.getInt('language');
-    // print("before");
-    // print(currentLang);
     await prefs.setInt('language', (currentLang == 1) ? 2 : 1);
-    // print("after");
-    // print(prefs.getInt('language'));
 
     WidgetsBinding.instance.reassembleApplication();
     notifyListeners();
@@ -117,5 +114,3 @@ class BloodModel with ChangeNotifier {
     notifyListeners();
   }
 }
-
-final notifyBloodmodel = ChangeNotifierProvider((ref) => BloodModel());

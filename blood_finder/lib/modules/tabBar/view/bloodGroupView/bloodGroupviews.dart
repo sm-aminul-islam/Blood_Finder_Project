@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:blood_finder/const/customText.dart';
-import 'package:blood_finder/controller/bloodGroupController.dart';
+import 'package:blood_finder/modules/customwidget/customtext/customText.dart';
+import 'package:blood_finder/modules/tabBar/controller/bloodGroupcontroller/bloodGroupController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -1,10 +1,11 @@
-import 'package:blood_finder/bloodModel/bloodgroupModel.dart';
+import 'package:blood_finder/modules/customwidget/customtext/customText.dart';
+import 'package:blood_finder/modules/Dashboard/Model/bloodgroupModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailsScreen extends StatelessWidget {
-  DetailsScreen({super.key, required this.userdetails});
+  const DetailsScreen({super.key, required this.userdetails});
   final Person userdetails;
   void directPhoneCall() async {
     await FlutterPhoneDirectCaller.callNumber('01911967811');
@@ -23,7 +24,7 @@ class DetailsScreen extends StatelessWidget {
               color: const Color(0xFF000000).withOpacity(0.08),
             ),
             Container(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(10),
               width: double.infinity,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -32,30 +33,28 @@ class DetailsScreen extends StatelessWidget {
                     colors: [Color(0xFFfbfbfb), Color(0xFFf2f2f2)]),
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      InkWell(
-                        onTap: () {
+                      IconButton(
+                        onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        child: SvgPicture.asset(
-                          "assets/images/combined_shape.svg",
-                          height: 21,
-                          width: 13,
+                        icon: const Icon(
+                          Icons.arrow_back_ios_new_outlined,
+                          color: Color(0xFF000000),
                         ),
                       ),
                       const SizedBox(
-                        width: 18,
+                        width: 10,
                       ),
-                      const Text(
-                        "Donar Details",
-                        style: TextStyle(
-                          fontFamily: "SofiaPro-SemiBold",
-                          fontSize: 16,
-                          color: Color(0xFF000000),
-                        ),
+                      const CustomText(
+                        text: "Donar Details",
+                        family: "SofiaPro-SemiBold",
+                        size: 16,
+                        color: Color(0xFF000000),
                       ),
                     ],
                   ),
@@ -69,24 +68,20 @@ class DetailsScreen extends StatelessWidget {
                       ),
                       Positioned(
                         top: 30,
-                        child: Text(
-                          userdetails.bgroup ?? "",
-                          style: const TextStyle(
-                            fontFamily: 'SofiaPro-SemiBold',
-                            fontSize: 22,
-                            color: Color(0xFFd1001c),
-                          ),
+                        child: CustomText(
+                          text: userdetails.bgroup ?? "",
+                          family: "SofiaPro-SemiBold",
+                          size: 22,
+                          color: Color(0xFFd1001c),
                         ),
                       ),
                     ],
                   ),
-                  Text(
-                    userdetails.name ?? "",
-                    style: const TextStyle(
-                      fontFamily: 'SofiaPro-Medium',
-                      fontSize: 17,
-                      color: Color(0xFF000000),
-                    ),
+                  CustomText(
+                    text: userdetails.name ?? "",
+                    family: 'SofiaPro-Medium',
+                    size: 17,
+                    color: const Color(0xFF000000),
                   ),
                 ],
               ),
@@ -105,19 +100,17 @@ class DetailsScreen extends StatelessWidget {
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Phone number',
-                            style: TextStyle(
-                                fontFamily: 'SofiaPro-Regular',
-                                fontSize: 11,
-                                color: Color(0xFF94989e)),
+                          CustomText(
+                            text: "Phone number",
+                            family: "SofiaPro-Regular",
+                            size: 11,
+                            color: Color(0xFF94989e),
                           ),
-                          Text(
-                            '+8801911967811',
-                            style: TextStyle(
-                                fontFamily: 'SofiaPro-Medium',
-                                fontSize: 14,
-                                color: Color(0xFF000000)),
+                          CustomText(
+                            text: "+8801911967811",
+                            family: 'SofiaPro-Medium',
+                            size: 14,
+                            color: Color(0xFF000000),
                           ),
                         ],
                       ),
@@ -126,7 +119,7 @@ class DetailsScreen extends StatelessWidget {
                         width: 80,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Color(0xFFf5f5f5)),
+                            color: const Color(0xFFf5f5f5)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -140,20 +133,18 @@ class DetailsScreen extends StatelessWidget {
                                 width: 15,
                               ),
                             ),
-                            Text(
-                              'CALL',
-                              style: TextStyle(
-                                fontFamily: 'SofiaPro-SemiBold',
-                                fontSize: 12,
-                                color: Color(0xFF000000),
-                              ),
-                            )
+                            const CustomText(
+                              text: "CALL",
+                              family: "SofiaPro-SemiBold",
+                              size: 12,
+                              color: Color(0xFF000000),
+                            ),
                           ],
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 14,
                   ),
                   Container(
@@ -164,25 +155,22 @@ class DetailsScreen extends StatelessWidget {
                       bottom: BorderSide(width: 0.5, color: Color(0xFFe6e6e6)),
                     )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
-                  Text(
-                    'Email Address',
-                    style: TextStyle(
-                      fontFamily: 'SofiaPro-Regular',
-                      fontSize: 11,
-                      color: Color(0xFF94989e),
-                    ),
+                  const CustomText(
+                    text: "Email Address",
+                    family: 'SofiaPro-Regular',
+                    size: 11,
+                    color: Color(0xFF94989e),
                   ),
-                  Text(
-                    'masudur.rahman@sslwireless.com',
-                    style: TextStyle(
-                        fontFamily: 'SofiaPro-Medium',
-                        fontSize: 14,
-                        color: Color(0xFF000000)),
+                  const CustomText(
+                    text: "masudur.rahman@sslwireless.com",
+                    family: 'SofiaPro-Medium',
+                    size: 14,
+                    color: Color(0xFF000000),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 14,
                   ),
                   Container(
@@ -193,98 +181,58 @@ class DetailsScreen extends StatelessWidget {
                       bottom: BorderSide(width: 0.5, color: Color(0xFFe6e6e6)),
                     )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Company',
-                        style: TextStyle(
-                          fontFamily: 'SofiaPro-Regular',
-                          fontSize: 11,
-                          color: Color(0xFF94989e),
-                        ),
+                      CustomText(
+                        text: "Compony",
+                        family: 'SofiaPro-Regular',
+                        size: 11,
+                        color: Color(0xFF94989e),
                       ),
-                      Text(
-                        'SSL Wireless',
-                        style: TextStyle(
-                            fontFamily: 'SofiaPro-Medium',
-                            fontSize: 14,
-                            color: Color(0xFF000000)),
+                      CustomText(
+                        text: "SSL Wireless",
+                        family: 'SofiaPro-Medium',
+                        size: 14,
+                        color: Color(0xFF000000),
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 14,
                   ),
                   Container(
                     height: 1,
                     width: 300,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         border: Border(
                       bottom: BorderSide(width: 0.5, color: Color(0xFFe6e6e6)),
                     )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Employee ID',
-                        style: TextStyle(
-                          fontFamily: 'SofiaPro-Regular',
-                          fontSize: 11,
-                          color: Color(0xFF94989e),
-                        ),
+                      CustomText(
+                        text: "Employee ID",
+                        family: 'SofiaPro-Regular',
+                        size: 11,
+                        color: Color(0xFF94989e),
                       ),
-                      Text(
-                        '1248',
-                        style: TextStyle(
-                            fontFamily: 'SofiaPro-Medium',
-                            fontSize: 14,
-                            color: Color(0xFF000000)),
+                      CustomText(
+                        text: "1260",
+                        family: 'SofiaPro-Medium',
+                        size: 14,
+                        color: Color(0xFF000000),
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 14,
-                  ),
-                  Container(
-                    height: 1,
-                    width: 300,
-                    decoration: BoxDecoration(
-                        border: Border(
-                      bottom: BorderSide(width: 0.5, color: Color(0xFFe6e6e6)),
-                    )),
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Department',
-                        style: TextStyle(
-                          fontFamily: 'SofiaPro-Regular',
-                          fontSize: 11,
-                          color: Color(0xFF94989e),
-                        ),
-                      ),
-                      Text(
-                        userdetails.prof ?? "",
-                        style: TextStyle(
-                            fontFamily: 'SofiaPro-Medium',
-                            fontSize: 14,
-                            color: Color(0xFF000000)),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
+                  const SizedBox(
                     height: 14,
                   ),
                   Container(
@@ -301,30 +249,58 @@ class DetailsScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Designation',
-                        style: TextStyle(
-                          fontFamily: 'SofiaPro-Regular',
-                          fontSize: 11,
-                          color: Color(0xFF94989e),
-                        ),
+                      const CustomText(
+                        text: "Department",
+                        family: 'SofiaPro-Regular',
+                        size: 11,
+                        color: Color(0xFF94989e),
                       ),
-                      Text(
-                        'Assistant Manager',
-                        style: TextStyle(
-                            fontFamily: 'SofiaPro-Medium',
-                            fontSize: 14,
-                            color: const Color(0xFF000000)),
+                      CustomText(
+                        text: userdetails.prof ?? "",
+                        family: 'SofiaPro-Medium',
+                        size: 14,
+                        color: Color(0xFF000000),
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 14,
                   ),
                   Container(
                     height: 1,
                     width: 300,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
+                        border: Border(
+                      bottom: BorderSide(width: 0.5, color: Color(0xFFe6e6e6)),
+                    )),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: "Designation",
+                        family: 'SofiaPro-Regular',
+                        size: 11,
+                        color: Color(0xFF94989e),
+                      ),
+                      CustomText(
+                        text: "Assistant Manager",
+                        family: 'SofiaPro-Medium',
+                        size: 14,
+                        color: Color(0xFF000000),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 14,
+                  ),
+                  Container(
+                    height: 1,
+                    width: 300,
+                    decoration: const BoxDecoration(
                         border: Border(
                       bottom: BorderSide(width: 0.5, color: Color(0xFFe6e6e6)),
                     )),

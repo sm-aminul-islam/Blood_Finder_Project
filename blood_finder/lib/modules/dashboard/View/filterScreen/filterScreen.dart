@@ -1,11 +1,11 @@
 import 'dart:developer';
-import 'package:blood_finder/const/constValue.dart';
-import 'package:blood_finder/const/customText.dart';
-import 'package:blood_finder/controller/bloodGroupController.dart';
-import 'package:blood_finder/controller/companyNameController.dart';
-import 'package:blood_finder/tabbarviews/bloodGroupviews.dart';
-import 'package:blood_finder/tabbarviews/companyTabview.dart';
-import 'package:blood_finder/tabbarviews/genderTabview.dart';
+import 'package:blood_finder/modules/customwidget/constwidget/constValue.dart';
+import 'package:blood_finder/modules/customwidget/customtext/customText.dart';
+import 'package:blood_finder/modules/tabBar/controller/bloodGroupcontroller/bloodGroupController.dart';
+import 'package:blood_finder/modules/tabBar/controller/companyDetailscontroller/companyNameController.dart';
+import 'package:blood_finder/modules/tabBar/view/bloodGroupView/bloodGroupviews.dart';
+import 'package:blood_finder/modules/tabBar/view/companyView/companyTabview.dart';
+import 'package:blood_finder/modules/tabBar/view/genderView/genderTabview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

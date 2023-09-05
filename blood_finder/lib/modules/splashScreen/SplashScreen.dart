@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:blood_finder/bloodGroupScreen/blood_group_screen.dart';
+import 'package:blood_finder/modules/dashboard/View/bloodviewScreen/bloodScreen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,10 +15,17 @@ class _BFSScreenState extends State<BFSScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => BloodGroupIdentify()));
-    });
+    startTime();
+  }
+
+  startTime() async {
+    var duration = new Duration(seconds: 6);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => BloodScreen()));
   }
 
   @override
@@ -28,11 +34,12 @@ class _BFSScreenState extends State<BFSScreen> {
       body: Stack(
         children: [
           Center(
-              child: SvgPicture.asset(
-            'assets/images/Donar.svg',
-            height: 149,
-            width: 185,
-          )),
+            child: SvgPicture.asset(
+              'assets/images/Donar.svg',
+              height: 149,
+              width: 185,
+            ),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Image.asset(
@@ -41,6 +48,14 @@ class _BFSScreenState extends State<BFSScreen> {
               width: 213,
             ),
           ),
+          Positioned(
+            right: 120,
+            top: 130,
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.red,
+              strokeWidth: 1,
+            ),
+          )
         ],
       ),
     );

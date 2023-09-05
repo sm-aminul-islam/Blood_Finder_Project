@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CustomText extends StatelessWidget {
-  const CustomText({
-    super.key,
-    required this.text,
-    required this.family,
-    required this.size,
-    required this.color,
-  });
+  const CustomText(
+      {super.key,
+      required this.text,
+      this.family,
+      required this.size,
+      required this.color,
+      this.fontWeight});
 
   final String text;
-  final String family;
+  final String? family;
   final double size;
   final Color color;
+  final FontWeight? fontWeight;
 
   @override
   Widget build(BuildContext context) {

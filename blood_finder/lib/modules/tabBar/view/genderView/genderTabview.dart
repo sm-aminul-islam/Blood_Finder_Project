@@ -1,5 +1,5 @@
-import 'package:blood_finder/const/constValue.dart';
-import 'package:blood_finder/const/customText.dart';
+import 'package:blood_finder/modules/customwidget/constwidget/constValue.dart';
+import 'package:blood_finder/modules/customwidget/customtext/customText.dart';
 import 'package:flutter/material.dart';
 
 class CustomGenderTabViews extends StatefulWidget {

@@ -1,6 +1,6 @@
-import 'package:blood_finder/const/constValue.dart';
-import 'package:blood_finder/const/customText.dart';
-import 'package:blood_finder/controller/companyNameController.dart';
+import 'package:blood_finder/modules/customwidget/constwidget/constValue.dart';
+import 'package:blood_finder/modules/customwidget/customtext/customText.dart';
+import 'package:blood_finder/modules/tabBar/controller/companyDetailscontroller/companyNameController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -10,6 +10,7 @@ class CustomCompanyNameTabview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(10),
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: Consumer(builder: (context, ref, child) {
@@ -33,11 +34,9 @@ class CustomCompanyNameTabview extends StatelessWidget {
                 },
                 child: Container(
                   decoration: CustomDecoration.boxDecoration,
-                  child:
-                      (ref.read(companyProvider.notifier).selectCompanyName ==
-                              index)
-                          ? CustomSVgwithColor.svgcl
-                          : CustomSvgwithoutCl.svg,
+                  child: (ref.watch(companyProvider).selectCompanyName == index)
+                      ? CustomSVgwithColor.svgcl
+                      : CustomSvgwithoutCl.svg,
                 ),
               ),
               title: CustomText(
@@ -104,7 +103,7 @@ class CustomCompanyNameTabview extends StatelessWidget {
                                           ),
                                           child: (ref
                                                       .watch(companyProvider)
-                                                      .selectCompanyName ==
+                                                      .selectdept ==
                                                   index)
                                               ? CustomSVgwithColor.svgcl
                                               : CustomSvgwithoutCl.svg),
