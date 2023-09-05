@@ -15,11 +15,13 @@ class CountChanges extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("You are push the button:"),
-            Consumer(builder: (context, WidgetRef ref, child) {
-              final cnt = ref.watch(counter);
-              cnt.nameInit(["A+", "B+"]);
-              return Text('${cnt.count}');
-            }),
+            Consumer(
+              builder: (context, WidgetRef ref, child) {
+                final cnt = ref.watch(counter);
+                //cnt.(["A+", "B+"]);
+                return Text('${cnt.count}');
+              },
+            ),
             SizedBox(
               height: 300,
             ),

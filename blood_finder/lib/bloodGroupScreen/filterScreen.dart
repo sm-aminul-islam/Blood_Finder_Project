@@ -1,10 +1,13 @@
 import 'dart:developer';
 import 'package:blood_finder/const/constValue.dart';
 import 'package:blood_finder/const/customText.dart';
+import 'package:blood_finder/controller/bloodGroupController.dart';
+import 'package:blood_finder/controller/companyNameController.dart';
 import 'package:blood_finder/tabbarviews/bloodGroupviews.dart';
 import 'package:blood_finder/tabbarviews/companyTabview.dart';
 import 'package:blood_finder/tabbarviews/genderTabview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FilterScreen extends StatefulWidget {
   FilterScreen({super.key});
@@ -14,36 +17,7 @@ class FilterScreen extends StatefulWidget {
 }
 
 class _FilterScreenState extends State<FilterScreen> {
-  final List<String> bloodList = [
-    "A+",
-    "O+",
-    "B+",
-    "AB+",
-    "A-",
-    "O-",
-    "B-",
-    "AB-",
-  ];
-
-  List<String> companyName = [
-    "Concorde Garments Ltd.",
-    "Biddyut Ltd.",
-    "SSL Wireless",
-    "Lily Apparels Ltd",
-    "Osman Interlinings Ltd."
-  ];
-  List<String> department = [
-    "Head of Business Grow",
-    "Accounts & Finance",
-    "Customer Care",
-    "Human Resources",
-    "Operations",
-  ];
   List<String> gender = ["Male", "Female"];
-
-  int bloodselect = 0;
-  int companyNameselect = 0;
-  int deptselect = 0;
   int genderselect = 0;
 
   @override
@@ -91,10 +65,10 @@ class _FilterScreenState extends State<FilterScreen> {
           body: const TabBarView(
             children: [
               //for BloodGroup Tabview that work default when Filter tab open
-              CustomBloodGroupViews(),
+              CustomBloodGroupView(),
 
               //For Company TabView
-              CustomCompanyTabview(),
+              CustomCompanyNameTabview(),
 
               // For Gender Tabview
               CustomGenderTabViews(),
@@ -128,10 +102,31 @@ class _FilterScreenState extends State<FilterScreen> {
                             borderRadius: BorderRadius.circular(13),
                             color: Color(0xffededed),
                           ),
-                          child: Center(
-                            child: Text(
-                              bloodList[bloodselect],
-                              style: CustomTextstyle.txt,
+                          child: Consumer(
+                              builder: (context, WidgetRef ref, child) {
+                            return Center(
+                              child: Text(
+                                "${ref.watch(bloodgroup).bloodList[ref.watch(bloodgroup).bloodselct]}",
+                                style: CustomTextstyle.txt,
+                              ),
+                            );
+                          }),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          height: 26,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(13),
+                            color: const Color(0xffededed),
+                          ),
+                          child: Consumer(
+                            builder: (context, ref, child) => Center(
+                              child: Text(
+                                ref.watch(companyProvider).companyName[ref
+                                    .watch(companyProvider)
+                                    .selectCompanyName],
+                                style: CustomTextstyle.txt,
+                              ),
                             ),
                           ),
                         ),
@@ -142,24 +137,13 @@ class _FilterScreenState extends State<FilterScreen> {
                             borderRadius: BorderRadius.circular(13),
                             color: const Color(0xffededed),
                           ),
-                          child: Center(
-                            child: Text(
-                              companyName[companyNameselect],
-                              style: CustomTextstyle.txt,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(5),
-                          height: 26,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            color: const Color(0xffededed),
-                          ),
-                          child: Center(
-                            child: Text(
-                              department[deptselect],
-                              style: CustomTextstyle.txt,
+                          child: Consumer(
+                            builder: (context, ref, child) => Center(
+                              child: Text(
+                                ref.watch(companyProvider).department[
+                                    ref.watch(companyProvider).selectdept],
+                                style: CustomTextstyle.txt,
+                              ),
                             ),
                           ),
                         )

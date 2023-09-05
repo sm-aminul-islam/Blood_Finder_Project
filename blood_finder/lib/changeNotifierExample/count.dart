@@ -19,8 +19,8 @@ class Counter with ChangeNotifier {
     notifyListeners();
   }
 
-  void nameInit(List<String> allGrop) {
-    bloodList = allGrop;
+  void nameInit(List<String> allbloodGrop) {
+    bloodList = allbloodGrop;
     notifyListeners();
   }
 

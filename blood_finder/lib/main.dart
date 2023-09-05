@@ -1,3 +1,4 @@
+import 'package:blood_finder/bloodGroupScreen/bloodScreen.dart';
 import 'package:blood_finder/changeNotifierExample/changeNotifierCounter.dart';
 import 'package:blood_finder/splashScreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +34,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SofiaPro-bold',
       ),
       debugShowCheckedModeBanner: false,
-      home: //FilterScreen(),
-          BFSScreen(),
-      // CountChanges(),
+      home: //BFSScreen(),
+          BloodScreen(),
     );
   }
 
