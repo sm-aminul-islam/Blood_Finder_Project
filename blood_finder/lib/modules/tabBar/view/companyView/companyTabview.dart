@@ -41,14 +41,14 @@ class CustomCompanyNameTabview extends StatelessWidget {
               ),
               title: CustomText(
                 text: company.companyName[index],
-                family: "SofiaPro-Medium",
+                fontWeight: FontWeight.w500,
                 size: 14,
                 color: const Color(0xFF000000),
               ),
               children: [
                 Container(
                   height: 261,
-                  color: Color(0xfff5f5f5),
+                  color: const Color(0xfff5f5f5),
                   child: SingleChildScrollView(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 60),
@@ -60,7 +60,7 @@ class CustomCompanyNameTabview extends StatelessWidget {
                               alignment: Alignment.centerLeft,
                               child: CustomText(
                                 text: "Select Department",
-                                family: "SofiaPro-Regular",
+                                fontWeight: FontWeight.w400,
                                 size: 11,
                                 color: Color(0xffadb1b2),
                               ),
@@ -109,7 +109,7 @@ class CustomCompanyNameTabview extends StatelessWidget {
                                               : CustomSvgwithoutCl.svg),
                                       title: CustomText(
                                         text: dept[index],
-                                        family: "SofiaPro-Medium",
+                                        fontWeight: FontWeight.w400,
                                         size: 12,
                                         color: (ref
                                                     .watch(companyProvider)

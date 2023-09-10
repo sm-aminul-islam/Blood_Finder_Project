@@ -5,13 +5,13 @@ class CustomText extends StatelessWidget {
       {super.key,
       required this.text,
       this.family,
-      required this.size,
+      this.size,
       required this.color,
       this.fontWeight});
 
   final String text;
   final String? family;
-  final double size;
+  final double? size;
   final Color color;
   final FontWeight? fontWeight;
 
@@ -20,9 +20,10 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: family,
+        fontFamily: "Sofia",
         fontSize: size,
         color: color,
+        fontWeight: fontWeight,
       ),
     );
   }

@@ -88,20 +88,15 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: SofiaPro-bold
+    - family: Sofia
       fonts:
         - asset: assets/fonts/Sofia Pro Bold.ttf
-
-    - family: SofiaPro-SemiBold
-      fonts:
+          weight: 700
         - asset: assets/fonts/Sofia Pro SemiBold.ttf
-
-    - family: SofiaPro-Medium
-      fonts:
+          weight: 600
         - asset: assets/fonts/Sofia Pro Medium.ttf
-    - family: SofiaPro-Regular
-      fonts:
+          weight: 500
         - asset: assets/fonts/Sofia Pro Regular.ttf
-  #
+          weight: 400
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

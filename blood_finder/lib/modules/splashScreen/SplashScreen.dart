@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:blood_finder/modules/dashboard/View/bloodviewScreen/bloodScreen.dart';
+import 'package:blood_finder/modules/dashboard/view/bloodviewScreen/bloodScreen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -10,7 +10,7 @@ class CustomGenderTabViews extends StatefulWidget {
 }
 
 class _CustomGenderTabViewsState extends State<CustomGenderTabViews> {
-  final List<String> gender = ["Male", "Female"];
+  final List<String> gender = ["Man", "Women"];
   int genderselect = 0;
 
   @override
@@ -43,7 +43,7 @@ class _CustomGenderTabViewsState extends State<CustomGenderTabViews> {
                     : CustomSvgwithoutCl.svg),
             title: CustomText(
                 text: gender[index],
-                family: "SofiaPro-Medium",
+                fontWeight: FontWeight.w500,
                 size: 14,
                 color: const Color(0xff000000)),
           ),

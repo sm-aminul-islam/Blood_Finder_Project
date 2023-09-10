@@ -3,17 +3,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomTextstyle {
   static const TextStyle txt = TextStyle(
-    fontFamily: "SofiaPro-Medium",
-    fontSize: 11,
-    color: Color(0xFF686d73),
-  );
+      fontFamily: "SofiaPro-Medium",
+      fontSize: 11,
+      color: Color(0xFF686d73),
+      fontWeight: FontWeight.w500);
 }
 
 class CustomDecoration {
   static BoxDecoration boxDecoration = BoxDecoration(
       shape: BoxShape.circle,
       border: Border.all(
-          strokeAlign: BorderSide.strokeAlignCenter, color: Color(0xFFadadad)));
+          strokeAlign: BorderSide.strokeAlignCenter,
+          color: const Color(0xFFadadad)));
 }
 
 class CustomSVgwithColor {

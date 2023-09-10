@@ -1,9 +1,7 @@
-import 'dart:developer';
-import 'dart:io';
 import 'package:blood_finder/modules/Dashboard/Controller/changeNotifierBloodGroup.dart';
-import 'package:blood_finder/modules/dashboard/View/deatilspageview/details_screen.dart';
-import 'package:blood_finder/modules/dashboard/View/filterScreen/filterScreen.dart';
 import 'package:blood_finder/modules/customwidget/customtext/customText.dart';
+import 'package:blood_finder/modules/dashboard/view/deatilspageview/details_screen.dart';
+import 'package:blood_finder/modules/filterScreen/filterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -39,7 +37,7 @@ class BloodScreen extends StatelessWidget {
                           },
                           child: CustomText(
                             text: AppLocalizations.of(context)!.title,
-                            family: "SofiaPro-bold",
+                            fontWeight: FontWeight.w700,
                             size: 16,
                             color: const Color(0xFFffffff),
                           ),
@@ -63,10 +61,9 @@ class BloodScreen extends StatelessWidget {
                         },
                         child: const CustomText(
                           text: "FILTERS",
-                          family: "SofiaPro-SemiBold",
                           size: 14,
                           color: Color(0xFFffffff),
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ],
@@ -107,7 +104,7 @@ class BloodScreen extends StatelessWidget {
                               text: changeBloodGroupController
                                       .showdata[index].bgroup ??
                                   " ",
-                              family: "SofiaPro-bold",
+                              fontWeight: FontWeight.w700,
                               size: 14,
                               color: const Color(0xFF000000),
                             ),
@@ -116,7 +113,7 @@ class BloodScreen extends StatelessWidget {
                             text: changeBloodGroupController
                                     .showdata[index].name ??
                                 "",
-                            family: "SofiaPro-Medium",
+                            fontWeight: FontWeight.w500,
                             size: 13,
                             color: const Color(0xFF000000),
                           ),
@@ -127,6 +124,7 @@ class BloodScreen extends StatelessWidget {
                                 " ",
                             size: 11,
                             color: const Color(0xFF94989e),
+                            fontWeight: FontWeight.w400,
                           ),
 
                           // //For call
@@ -197,6 +195,7 @@ class BloodScreen extends StatelessWidget {
                             child: CustomText(
                               text: changeBloodlistControlller
                                   .bloodGroupList[index],
+                              fontWeight: FontWeight.w700,
                               size: 14,
                               color:
                                   (changeBloodlistControlller.selected == index)

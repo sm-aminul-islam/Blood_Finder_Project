@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:blood_finder/modules/dashboard/View/deatilspageview/details_screen.dart';
-import 'package:blood_finder/modules/dashboard/View/filterScreen/filterScreen.dart';
+import 'package:blood_finder/modules/dashboard/view/deatilspageview/details_screen.dart';
+import 'package:blood_finder/modules/filterScreen/filterScreen.dart';
 import 'package:blood_finder/modules/Dashboard/Model/bloodgroupModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

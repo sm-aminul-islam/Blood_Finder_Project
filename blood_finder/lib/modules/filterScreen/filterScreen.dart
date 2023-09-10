@@ -40,7 +40,7 @@ class _FilterScreenState extends State<FilterScreen> {
             ),
             bottom: const TabBar(
               labelStyle: TextStyle(
-                fontFamily: "SofiaPro-SemiBold",
+                fontWeight: FontWeight.w600,
                 fontSize: 12,
               ),
               unselectedLabelColor: Color(0xFFadadad),
@@ -56,7 +56,7 @@ class _FilterScreenState extends State<FilterScreen> {
             ),
             title: const CustomText(
               text: "Filter by",
-              family: "SofiaPro-Semibold",
+              fontWeight: FontWeight.w500,
               size: 18,
               color: Color(0xFF000000),
             ),
@@ -158,7 +158,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       child: Text(
                         "APPLY",
                         style: TextStyle(
-                          fontFamily: "SofiaPro-bold",
+                          fontWeight: FontWeight.w700,
                           fontSize: 14,
                           letterSpacing: 1,
                           color: Color(0xffffffff),

@@ -52,7 +52,7 @@ class DetailsScreen extends StatelessWidget {
                       ),
                       const CustomText(
                         text: "Donar Details",
-                        family: "SofiaPro-SemiBold",
+                        fontWeight: FontWeight.w700,
                         size: 16,
                         color: Color(0xFF000000),
                       ),
@@ -70,7 +70,7 @@ class DetailsScreen extends StatelessWidget {
                         top: 30,
                         child: CustomText(
                           text: userdetails.bgroup ?? "",
-                          family: "SofiaPro-SemiBold",
+                          fontWeight: FontWeight.w600,
                           size: 22,
                           color: Color(0xFFd1001c),
                         ),
@@ -79,7 +79,7 @@ class DetailsScreen extends StatelessWidget {
                   ),
                   CustomText(
                     text: userdetails.name ?? "",
-                    family: 'SofiaPro-Medium',
+                    fontWeight: FontWeight.w500,
                     size: 17,
                     color: const Color(0xFF000000),
                   ),
@@ -102,13 +102,13 @@ class DetailsScreen extends StatelessWidget {
                         children: [
                           CustomText(
                             text: "Phone number",
-                            family: "SofiaPro-Regular",
+                            fontWeight: FontWeight.w400,
                             size: 11,
                             color: Color(0xFF94989e),
                           ),
                           CustomText(
                             text: "+8801911967811",
-                            family: 'SofiaPro-Medium',
+                            fontWeight: FontWeight.w500,
                             size: 14,
                             color: Color(0xFF000000),
                           ),
@@ -135,7 +135,7 @@ class DetailsScreen extends StatelessWidget {
                             ),
                             const CustomText(
                               text: "CALL",
-                              family: "SofiaPro-SemiBold",
+                              fontWeight: FontWeight.w600,
                               size: 12,
                               color: Color(0xFF000000),
                             ),
@@ -160,13 +160,13 @@ class DetailsScreen extends StatelessWidget {
                   ),
                   const CustomText(
                     text: "Email Address",
-                    family: 'SofiaPro-Regular',
+                    fontWeight: FontWeight.w400,
                     size: 11,
                     color: Color(0xFF94989e),
                   ),
                   const CustomText(
                     text: "masudur.rahman@sslwireless.com",
-                    family: 'SofiaPro-Medium',
+                    fontWeight: FontWeight.w500,
                     size: 14,
                     color: Color(0xFF000000),
                   ),
@@ -189,13 +189,13 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       CustomText(
                         text: "Compony",
-                        family: 'SofiaPro-Regular',
+                        fontWeight: FontWeight.w400,
                         size: 11,
                         color: Color(0xFF94989e),
                       ),
                       CustomText(
                         text: "SSL Wireless",
-                        family: 'SofiaPro-Medium',
+                        fontWeight: FontWeight.w500,
                         size: 14,
                         color: Color(0xFF000000),
                       ),
@@ -220,13 +220,13 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       CustomText(
                         text: "Employee ID",
-                        family: 'SofiaPro-Regular',
+                        fontWeight: FontWeight.w400,
                         size: 11,
                         color: Color(0xFF94989e),
                       ),
                       CustomText(
                         text: "1260",
-                        family: 'SofiaPro-Medium',
+                        fontWeight: FontWeight.w500,
                         size: 14,
                         color: Color(0xFF000000),
                       ),
@@ -251,13 +251,13 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       const CustomText(
                         text: "Department",
-                        family: 'SofiaPro-Regular',
+                        fontWeight: FontWeight.w400,
                         size: 11,
                         color: Color(0xFF94989e),
                       ),
                       CustomText(
                         text: userdetails.prof ?? "",
-                        family: 'SofiaPro-Medium',
+                        fontWeight: FontWeight.w500,
                         size: 14,
                         color: Color(0xFF000000),
                       ),
@@ -282,13 +282,13 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       CustomText(
                         text: "Designation",
-                        family: 'SofiaPro-Regular',
+                        fontWeight: FontWeight.w400,
                         size: 11,
                         color: Color(0xFF94989e),
                       ),
                       CustomText(
                         text: "Assistant Manager",
-                        family: 'SofiaPro-Medium',
+                        fontWeight: FontWeight.w500,
                         size: 14,
                         color: Color(0xFF000000),
                       ),
@@ -301,9 +301,11 @@ class DetailsScreen extends StatelessWidget {
                     height: 1,
                     width: 300,
                     decoration: const BoxDecoration(
-                        border: Border(
-                      bottom: BorderSide(width: 0.5, color: Color(0xFFe6e6e6)),
-                    )),
+                      border: Border(
+                        bottom:
+                            BorderSide(width: 0.5, color: Color(0xFFe6e6e6)),
+                      ),
+                    ),
                   )
                 ],
               ),

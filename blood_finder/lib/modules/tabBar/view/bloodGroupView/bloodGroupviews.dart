@@ -36,20 +36,20 @@ class CustomBloodGroupView extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: (ref.read(bloodgroup.notifier).bloodselct ==
                                   index)
-                              ? Color(0xFFd1001c)
-                              : Color(0xFFffffff),
+                              ? const Color(0xFFd1001c)
+                              : const Color(0xFFffffff),
                           shape: BoxShape.circle,
-                          border:
-                              Border.all(color: Color(0xFFe6e6e6), width: 0.5),
+                          border: Border.all(
+                              color: const Color(0xFFe6e6e6), width: 0.5),
                         ),
                         child: Center(
                           child: CustomText(
                             text: blood[index],
-                            family: "SofiaPro-SemiBold",
+                            fontWeight: FontWeight.w600,
                             size: 18,
                             color: (ref.watch(bloodgroup).bloodselct == index)
-                                ? Color(0xFFffffff)
-                                : Color(0xFF686d78),
+                                ? const Color(0xFFffffff)
+                                : const Color(0xFF686d78),
                           ),
                         ),
                       ),

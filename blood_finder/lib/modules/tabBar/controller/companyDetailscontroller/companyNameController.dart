@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+final companyProvider = ChangeNotifierProvider((ref) => CompanyName());
+
 class CompanyName with ChangeNotifier {
   int selectCompanyName = 0;
+
   List<String> companyName = [
     "Concorde Garments Ltd.",
     "Biddyut Ltd.",
@@ -30,5 +33,3 @@ class CompanyName with ChangeNotifier {
     notifyListeners();
   }
 }
-
-final companyProvider = ChangeNotifierProvider((ref) => CompanyName());
