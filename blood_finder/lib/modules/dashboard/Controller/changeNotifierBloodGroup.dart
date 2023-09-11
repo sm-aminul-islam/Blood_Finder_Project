@@ -17,6 +17,7 @@ class BloodController with ChangeNotifier {
 
   GroupModel data = GroupModel();
   List<Person> showdata = [];
+
   int selected = 0;
 
   List<String> bloodGroupList = [
@@ -111,6 +112,10 @@ class BloodController with ChangeNotifier {
           showdata = data.all ?? [];
         }
     }
+    notifyListeners();
+  }
+
+  void filterProfAndBloodGroup() {
     notifyListeners();
   }
 }

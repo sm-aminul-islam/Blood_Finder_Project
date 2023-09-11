@@ -17,14 +17,15 @@ class CustomBloodGroupView extends StatelessWidget {
             padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
             child: Consumer(
               builder: (context, WidgetRef ref, child) {
-                final blood = ref.read(bloodgroup.notifier).bloodList;
+                final blood = ref.read(bloodgroup.notifier);
+                print(ref.watch(bloodgroup).matchBloodgroup);
 
                 return GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       crossAxisSpacing: 34,
                       mainAxisSpacing: 40),
-                  itemCount: blood.length,
+                  itemCount: blood.bloodList.length,
                   itemBuilder: (BuildContext context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -44,7 +45,7 @@ class CustomBloodGroupView extends StatelessWidget {
                         ),
                         child: Center(
                           child: CustomText(
-                            text: blood[index],
+                            text: blood.bloodList[index],
                             fontWeight: FontWeight.w600,
                             size: 18,
                             color: (ref.watch(bloodgroup).bloodselct == index)

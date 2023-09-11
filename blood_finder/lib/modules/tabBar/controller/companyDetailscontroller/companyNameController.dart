@@ -5,6 +5,7 @@ final companyProvider = ChangeNotifierProvider((ref) => CompanyName());
 
 class CompanyName with ChangeNotifier {
   int selectCompanyName = 0;
+  int selectdept = 0;
 
   List<String> companyName = [
     "Concorde Garments Ltd.",
@@ -21,7 +22,13 @@ class CompanyName with ChangeNotifier {
     "Human Resources",
     "Operations",
   ];
-  int selectdept = 0;
+
+  bool isExpanded = false;
+
+  void toggleExpansion() {
+    isExpanded = !isExpanded;
+    notifyListeners();
+  }
 
   void setCompanyName(int index) {
     selectCompanyName = index;

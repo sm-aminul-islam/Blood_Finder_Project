@@ -1,3 +1,4 @@
+import 'package:blood_finder/modules/filterScreen/view/donarfilterScreen.dart';
 import 'package:blood_finder/modules/splashScreen/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -16,7 +17,6 @@ class MyApp extends StatelessWidget {
   MyApp({super.key});
   int lang = 1;
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     getLanguagePreference();
@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: BFSScreen(),
+      //DonarFilterScreen(),
     );
   }
 

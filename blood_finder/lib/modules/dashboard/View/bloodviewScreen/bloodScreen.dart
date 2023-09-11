@@ -1,7 +1,7 @@
 import 'package:blood_finder/modules/Dashboard/Controller/changeNotifierBloodGroup.dart';
 import 'package:blood_finder/modules/customwidget/customtext/customText.dart';
 import 'package:blood_finder/modules/dashboard/view/deatilspageview/details_screen.dart';
-import 'package:blood_finder/modules/filterScreen/filterScreen.dart';
+import 'package:blood_finder/modules/filterScreen/view/filterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
